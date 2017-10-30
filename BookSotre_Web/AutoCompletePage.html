@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="../js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <link href="../css/jquery-ui.css" rel="stylesheet"/>
+    <!--在ui.js下的基本测试-->
+    <script>
+        $(function () {
+            var availableTags = [
+              "ActionScript",
+              "AppleScript",
+              "Asp",
+              "BASIC",
+              "C",
+              "C++",
+              "Clojure",
+              "COBOL",
+              "ColdFusion",
+              "Erlang",
+              "Fortran",
+              "Groovy",
+              "欢乐颂第一季",
+              "欢乐颂第二季",
+              "欢乐颂第三季",
+              "心理罪",
+              "销售心理学",
+              "追风筝的人",
+              "Haskell",
+              "Java",
+              "JavaScript",
+              "Lisp",
+              "C语言入门经典",
+              "欢乐颂精装版（全部三册）",
+              "橘生淮南",
+              "随遇而安",
+              "三生三世十里桃花",
+              "三生三世枕上书",
+              "Perl",
+              "PHP",
+              "Python",
+              "Ruby",
+              "Scala",
+              "网络黑白",
+              "最好的我们",
+              "桥的故事",
+              "Scheme"
+            ];
+            $("#tags").autocomplete(availableTags,{
+                minChars: 2,
+                max: 3,
+                placeholder: '请输入书名',
+                width: 200,
+                height: 16,
+                autoFill: true,
+                mustMatch: true,
+                matchContains: true,
+                scrollHeight: 220,
+                source:availableTags
+            });
+
+            
+        });
+
+    </script>
+</head>
+<body>
+
+    <div class="ui-widget">
+        <label for="tags">Tags: </label>
+        <input id="tags" placeholder="请输入书名">
+    </div>
+
+</body>
+</html>

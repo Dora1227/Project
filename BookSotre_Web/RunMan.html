@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        .drop-shadow img{
+            -webkit-filter:drop-shadow(5px 5px 5px #f4f4f4);/*图片阴影*/           
+        }
+
+        .drop-shadow1 img {
+            -webkit-filter: saturate(3);/*对比色*/
+        }
+
+        .drop-shadow2 img {
+            -webkit-filter:blur(3px);/*模糊*/
+        }
+
+        .drop-shadow3 img {
+            -webkit-filter: brightness(2);/*亮度*/
+        }
+
+        .drop-shadow4 img {
+            -webkit-filter: contrast(2);/*饱和度*/
+        }
+
+        .drop-shadow5 img {
+            -webkit-filter: grayscale(1);/*灰度*/
+        }
+
+        .drop-shadow6 img {
+            -webkit-filter:invert(1);/*反色*/
+        }
+
+        .drop-shadow7 img {
+            -webkit-filter: sepia(1);/*褐色*/
+        }
+
+        .drop-shadow8 img {
+            -webkit-filter: hue-rotate(180deg);/*色相旋转*/
+        }
+
+        
+
+        body {
+            background-color: #1d1f20;
+            color: #ffffff;
+            display: block;
+            margin: 8px;
+        }
+
+        .container {
+            height: 300px;
+            width: 300px;
+            margin: 50px;
+        }
+
+        .person {
+            position: absolute;
+            height: 75px;
+            width: 0;
+            color: #fff;
+            left: 150px;
+            top: 159px;
+            transform-origin: 50% 50% 0px;
+            -webkit-animation: sprint 2s infinite ease-in;
+        }
+
+            .person .head:before {
+                content: "";
+                position: absolute;
+                top: 0px;
+                left: -6px;
+                height: 2.7px;
+                width: 42px;
+                border-radius: 20%;
+                border: 4px solid white;
+                background-color: #fff;
+                transform-origin: 50% 100% 0px;
+                z-index: 90;
+            }
+
+            .person .head {
+                position: absolute;
+                top: -30px;
+                left: -6px;
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                border: 4px solid white;
+                transform-origin: 50% 100% 0px;
+                z-index: 90;
+                -webkit-animation: bob 2s infinite alternate;
+            }
+
+           .person .head:after {
+                content: "";
+                position: absolute;
+                top: -12px;
+                left: 9px;
+                height: 12px;
+                width: 15px;
+                border-radius: 30%;
+                border: 4px solid white;
+                background-color: #fff;
+                z-index: 90;
+            }
+
+            .person .torso {
+                position: absolute;
+                height: 60px;
+                width: 0;
+                border-left: 2px solid white;
+                left: 0px;
+                top: 15px;
+                z-index: 90;
+            }
+
+            .person .part {
+                position: absolute;
+                left: 0;
+                top: 75px;
+                z-index: 90;
+            }
+
+            .person .part.arm {
+                    position: absolute;
+                    border-left: 3px solid white;
+                    border-bottom: 3px solid white;
+                    height: 45px;
+                    width: 39px;
+                    top: 15px;
+                    right: 300px;
+                    transform-origin: 0% 0% 0px;
+                    -webkit-animation: pump 1s infinite ease-in-out;
+                }
+
+              .person .part.arm.one {
+                    transform: rotate3d(0, 0, 1, -90deg);
+               }
+
+               .person .part.arm.two {
+                    transform: rotate3d(0, 0, 1, -90deg);
+                    animation-delay: .5s;
+               }
+
+               .person .part.leg {
+                    height: 57px;
+                    width: 60px;
+                    border-right: 3px solid white;
+                    border-top: 3px solid white;
+                    -webkit-animation: run 1s infinite ease-in;
+                    transform-origin: 0% 0% 0px;
+                }
+
+                .person .part.leg.one {
+                    transform: rotate3d(0, 0, 1, 90deg);
+                }
+
+                .person .part.leg.two {
+                    transform: rotate3d(0, 0, 1, 80deg);
+                    animation-delay: .5s;
+                }
+
+                .person .part .foot {
+                    position: absolute;
+                    top: 90px;
+                    left: 0;
+                    width: 3px;
+                    height: 3px;
+                    background-color: #ffffff;
+                    z-index: 900;
+                    border: 3px solid red;
+                }
+
+        @keyframes run {
+            0% {
+                transform: rotate3d(0, 0, 1, -5deg);
+            }
+
+            50% {
+                transform: rotate3d(0, 0, 1, 150deg);
+            }
+
+            100% {
+                transform: rotate3d(0, 0, 1, -5deg);
+            }
+        }
+
+        @keyframes bob {
+            0% {
+                transform: rotate3d(0, 0, 1, 5deg);
+            }
+
+            25% {
+                transform: rotate3d(0, 0, 1, -30deg) skew(15deg, 0deg);
+            }
+
+            50% {
+                transform: rotate3d(0, 0, 1, 5deg);
+            }
+
+            75% {
+                transform: rotate3d(0, 0, 1, -30deg) skew(15deg, 0deg);
+            }
+
+            100% {
+                transform: rotate3d(0, 0, 1, 20deg) skew(-15deg, 0deg);
+            }
+        }
+
+        @keyframes pump {
+            0% {
+                transform: rotate3d(0, 0, 1, 80deg);
+            }
+
+            50% {
+                transform: rotate3d(0, 0, 1, -70deg);
+            }
+
+            100% {
+                transform: rotate3d(0, 0, 1, 80deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate3d(0, 0, 1, -180deg);
+            }
+
+            25% {
+                transform: rotate3d(0, 0, 1, -100deg);
+            }
+
+            75% {
+                transform: rotate3d(0, 0, 1, 100deg);
+            }
+
+            100% {
+                transform: rotate3d(0, 0, 1, 180deg);
+            }
+        }
+
+        @keyframes sprint {
+            0% {
+                transform-origin: 50% 50% 0px;
+                transform: translate(-500px, 0px);
+            }
+
+            100% {
+                transform: translate(0px, 0px);
+                transform-origin: 50% 50% 0px;
+                transform: translate(500px, 0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='person'>
+            <div class='head'></div>
+            <div class='part arm one'></div>
+            <div class='part arm two'></div>
+            <div class='torso'></div>
+            <div class='part leg one'></div>
+            <div class='part foot one'></div>
+            <div class='part leg two'></div>
+            <div class='part foot two'></div>
+        </div>
+    </div>
+
+    <div style="float: left; display: inline; width: 30%; height: 30%;margin-bottom:20px; " >
+        <h2 style="color:white;">原图</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width: 70%; height: 70%; " />
+    </div>
+    <div style="float: left; display: inline; width: 30%; height: 30%;margin-bottom:20px; " class="drop-shadow">
+        <h2 style="color:white;">图片阴影</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width: 70%; height: 70%; " />
+    </div>
+    <div style="-webkit-filter: hue-rotate(90deg); filter: hue-rotate(90deg); float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;">
+        <h2 style="color:white;">色相旋转90度</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+    <div style=" float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;" class="drop-shadow8">
+        <h2 style="color:white;">色相旋转180度</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+    <div style="float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;" class="drop-shadow1">
+        <h2 style="color:white;">对比度</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+   
+    <div style="float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;" class="drop-shadow2">
+        <h2 style="color:white;">模糊</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+    <div style="float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;" class="drop-shadow3">
+        <h2 style="color:white;">亮度</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+    <div style="float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;" class="drop-shadow4">
+        <h2 style="color:white;">饱和度</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+    <div style="float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;" class="drop-shadow5">
+        <h2 style="color:white;">灰度</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+    <div style="float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;" class="drop-shadow6">
+        <h2 style="color:white;">反色</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+    <div style="float: left; display: inline; width: 30%; height: 30%; margin-bottom: 20px;" class="drop-shadow7">
+        <h2 style="color:white;">褐色</h2>
+        <img src="upload/bk_img/b_qgs.jpg" style="width:70%;height:70%;" />
+    </div>
+</body>
+</html>
